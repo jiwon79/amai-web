@@ -6,9 +6,11 @@
     <title>Log In</title>
 </head>
 <body>
+
     <form action="index.php" method="post">
         <h1>log in page</h1>
         
     </form>
+    <h6>아디디가 없으신가요? <a href="join.php">join</a></h6>
 </body>
 </html>
