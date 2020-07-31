@@ -6,7 +6,7 @@
     <title>join</title>
 </head>
 <body>
-    <form action="joinAction.php" method="post">
+    <form action="../Action/_join.php" method="post">
         아이디 : <input type="text" name="userid"><br>
         비밀번호 : <input type="text" name="userpassword"><br>
         이름 : <input type="text" name="username"><br>
