@@ -8,11 +8,10 @@
 <body>
     <h1> log in page</h1>
     <form action="../Action/_login.php" method="post">
-        <input type="text" name=id placeholder="아이디"><br>
-        <input type="text" name=pw placeholder="비밀번호"><br>
+        <input type="text" name="userid" placeholder="아이디"><br>
+        <input type="text" name="userpassword" placeholder="비밀번호"><br>
         <input type="submit">
-        
     </form>
-    <h6>아디디가 없으신가요? <a href="join.php">join</a></h6>
+    아디디가 없으신가요? <a href="join.php">join</a>
 </body>
 </html>

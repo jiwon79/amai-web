@@ -1,7 +1,47 @@
 <?php
+    if(isset($_POST['userid'])&&isset($_POST['userpassword'])) {
+        include "db.php";
 
+        $id = $_POST['userid'];
+        $pw = $_POST['userpassword'];
 
+        $sql = "SELECT * FROM `user` WHERE userid='$id'";
+        $result = $conn->query($sql);
 
+        if($result==1) {
+            $row=mysqli_fetch_assoc($result);
 
-    echo "<script>location.href='../index.html';</script>"
+            if($row['userpassword']==$pw) {
+                $_SESSION['userid']=$id;
+                if(isset($_SESSION['userid'])) {
+                ?>
+                    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+                    <script>
+                        alert("로그인 되었습니다");
+                        location.replace("../index.php");
+                    </script>
+                <?php
+                } else {
+                    ?>
+                    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+                    <script>
+                        alert("아이디 혹은 비밀번호가 잘못되었습니다");
+                        history.back();
+                    </script>
+                    <?php
+                }
+            } else {
+                ?>
+                <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+                <script>
+                    alert("아이디 혹은 비밀번호가 잘못되었습니다");
+                    history.back();
+                </script>
+                <?php
+            }
+        }
+        
+
+        #echo "<script>location.href='../index.php';</script>";
+    }
 ?>
