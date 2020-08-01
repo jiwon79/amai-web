@@ -13,6 +13,7 @@
 
             if($row['userpassword']==$pw) {
                 $_SESSION['userid']=$id;
+                
                 if(isset($_SESSION['userid'])) {
                 ?>
                     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -43,5 +44,9 @@
         
 
         #echo "<script>location.href='../index.php';</script>";
+    } else {
+        echo "<script>alert(아이디 또는 비밀번호가 잘못되었거나 잘못된 접근입니다);";
+        echo "window.location.replace('login.php');</script>";
+        exit;
     }
 ?>
