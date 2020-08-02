@@ -1,6 +1,4 @@
-<?php
-    session_start();
-?>
+<?php session_start(); ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -10,6 +8,7 @@
     <title>Amai Web</title>
 </head>
 <body>
+
     <h1>amai web</h1>
     <ul>
         <li><a href="#">About Us</a></li>
@@ -20,6 +19,8 @@
             if(isset($_SESSION['userid'])) {
         ?>
         <li><a href="Action/logout.php">Log Out</a></li>
+        <li><a href="Views/mypage.php">My page</a></li>
+        
         
         <?php
             } else {
@@ -31,6 +32,11 @@
         ?>
     </ul>
 
+    <?php 
+        if(isset($_SESSION['username'])) {
+            echo $_SESSION['username']."님 환영합니다!"; 
+        }
+    ?>
 
 </body>
 </html>
