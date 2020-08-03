@@ -13,12 +13,12 @@
     <ul>
         <li><a href="#">About Us</a></li>
         <li><a href="#">Gallay</a></li>
-        <li><a href="#">Community</a></li>
+        <li><a href="Views/community/board_list.php">Community</a></li>
         
         <?php
             if(isset($_SESSION['userid'])) {
         ?>
-        <li><a href="Action/logout.php">Log Out</a></li>
+        <li><a href="php/logout.php">Log Out</a></li>
         <li><a href="Views/mypage.php">My page</a></li>
         
         

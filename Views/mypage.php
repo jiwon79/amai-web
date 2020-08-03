@@ -6,8 +6,9 @@
     <title>My Page</title>
 </head>
 <body>
-    <form action="../Action/join-out.php">
-        <input type="submit" placeholder="회원탈퇴">
+    이름 : <?php echo $_SESSION['userid'] ?>
+    <form action="../php/join-out.php">
+        <input type="submit">
     </form>
 </body>
 </html>
