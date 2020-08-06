@@ -19,13 +19,62 @@
         if($rowCount = mysqli_fetch_array($resultCount)) {
             $totalRowNum = $rowCount["count(*)"];
         }
+        $_SESSION['rownum'] = $totalRowNum;
 
         if($resultCount) {
             echo "행 갯수 조회 성공 : ".$totalRowNum."<br>";
         } else {
             echo "결과 없음 : ".mysqli_error($conn);
         }
+
+        $rowPerPage = 5;
+        $begin = ($currentPage - 1) * $rowPerPage;
+        $sql = "SELECT board_no, board_user, board_title, board_date FROM board order by board_no desc limit ".$begin.",".$rowPerPage."";
+        $result = mysqli_query($conn, $sql);
+
+        if($result) {
+            echo "조회 성공";
+        } else {
+            echo "결과없음 : ".mysqli_error($conn);
+        }
     ?>
+    <table>
+        <tr>
+            <td>board_no</td>
+            <td>board_title</td>
+            <td>board_user</td>
+            <td>board_date</td>
+            <td>수정</td>
+            <td>삭제</td>
+        </tr>
+        <?php
+            while($row = mysqli_fetch_array($result)) {
+        ?>
+            <tr>
+                <td>
+                    <?php echo $row["board_no"] ?>
+                </td>
+                
+                <td>
+                    <?php
+                        echo "<a href='/board_detail.php?board_no=".$row["board_no"]."'>";
+                        echo $row["board_title"];
+                        echo "</a>";
+                    ?>
+                </td>
+
+                <td>
+                    <?php echo $row["board_user"]; ?>
+                </td>
+                
+                <td>
+                    <?php echo $row["board_date"]; ?>
+                </td>
+            </tr>
+        <?php
+            }
+        ?>
+    </table>
 
     <a href="board_add_form.php">글 쓰기</a>
     <br><br>
