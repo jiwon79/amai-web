@@ -6,6 +6,9 @@
     <title>community list</title>
 </head>
 <body>
+    <a href="../../index.php">amai web</a>
+    <br>
+
     <?php
         include "../../php/db.php";
 
@@ -44,8 +47,6 @@
             <td>board_title</td>
             <td>board_user</td>
             <td>board_date</td>
-            <td>수정</td>
-            <td>삭제</td>
         </tr>
         <?php
             while($row = mysqli_fetch_array($result)) {
@@ -57,7 +58,7 @@
                 
                 <td>
                     <?php
-                        echo "<a href='/board_detail.php?board_no=".$row["board_no"]."'>";
+                        echo "<a href='board_detail.php?board_no=".$row["board_no"]."'>";
                         echo $row["board_title"];
                         echo "</a>";
                     ?>
@@ -76,7 +77,18 @@
         ?>
     </table>
 
+    <?php
+        if($currentPage > 1) {
+            echo "<a href='board_list.php?currentPage=".($currentPage-1)."'>이전</a>";
+        }
+
+        $lastPage = ($totalRowNum-1) / $rowPerPage;
+
+        if($currentPage <= $lastPage) {
+            echo "<a href='board_list.php?currentPage=".($currentPage+1)."'>다음</a>";
+        }
+    ?>
     <a href="board_add_form.php">글 쓰기</a>
-    <br><br>
+
 </body>
 </html>
