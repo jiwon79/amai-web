@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +8,7 @@
     <title>My Page</title>
 </head>
 <body>
-    이름 : <?php echo $_SESSION['userid'] ?>
+    이름 : <?php echo $_SESSION['username'] ?>
     <form action="../php/join-out.php">
         <input type="submit">
     </form>

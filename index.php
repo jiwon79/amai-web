@@ -8,35 +8,46 @@
     <title>Amai Web</title>
 </head>
 <body>
+    <div class="header">
+        <img src="images/amai_logo_mini.png" alt="amai logo" href="index.php">
 
-    <h1>amai web</h1>
-    <ul>
-        <li><a href="#">About Us</a></li>
-        <li><a href="#">Gallay</a></li>
-        <li><a href="Views/community/board_list.php">Community</a></li>
-        
-        <?php
-            if(isset($_SESSION['userid'])) {
-        ?>
-        <li><a href="php/logout.php">Log Out</a></li>
-        <li><a href="Views/mypage.php">My page</a></li>
-        
-        
-        <?php
-            } else {
-        ?>
-        <li><a href="Views/login.php">Log In</a></li>
-        
-        <?php
-            }
-        ?>
-    </ul>
+        <div class="topbar">
+            <?php
+                if(isset($_SESSION['userid'])) {
+            ?>
+            <!-- my page -->
+            <a href="Views/mypage.php">
+                <?php 
+                    if(isset($_SESSION['username'])) {
+                    echo $_SESSION['username']; 
+                } ?> 
+            </a>
+            <!-- log out -->
+            <a href="php/logout.php">Log out</a>
 
-    <?php 
-        if(isset($_SESSION['username'])) {
-            echo $_SESSION['username']."님 환영합니다!"; 
-        }
-    ?>
+            <?php } else { ?>
+                <a href="Views/join.php">Join</a>
+                <a href="Views/login.php">Log in</a>            
+            <?php } ?>
+
+        </div>
+
+        <div>
+            <a href="#">About Us</a>
+            <a href="#">Gallery</a>
+            <a href="Views/community/board_list.php">Community</a>
+        </div>
+    </div>
+    
+    <!-- 검은색 배경 -->
+    <div class="middle">
+        middle icon
+    </div>
+
+    <!-- 그림 갤러리 -->
+    <div>
+
+    </div>
 
 </body>
 </html>
