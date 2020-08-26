@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- 부트스트랩 css 사용 -->
+    <link rel="stylesheet" href="/src/css/bootstrap.css">
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
@@ -34,5 +37,9 @@
     <?php
     
     ?>
+
+    <!--  부트스트랩 js 사용 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/src/js/bootstrap.js"></script>
 </body>
 </html>

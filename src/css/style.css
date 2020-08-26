@@ -1,0 +1,25 @@
+.header {
+    background-color: #242423;
+    color: #242423;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+
+#amai_logo_img{
+    width: 124px;
+    height: 28px;
+}
+
+.header a {
+    color: white;
+}
+
+.middle {
+    background-color: yellowgreen;
+    color: white;
+}
+
+footer {
+    background-color: yellowgreen;
+}
