@@ -1,6 +1,6 @@
 # amai-web
 ## Introduction
-AMAI lab is korea science academy's ngineering lab
+AMAI lab is korea science academy's engineering lab
 This is amai web site
 
 ## web hosting
