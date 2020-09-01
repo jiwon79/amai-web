@@ -13,12 +13,11 @@
 </head>
 
 <body>
-    <nav class="header">
+    <div class="header">
         <a href="/index.php"><img src="/src/images/amai_logo_mini.png" alt="amai logo" id="amai_logo_img"></a>
         
 
         <div class="top_menu">
-            <div class="container">
             <?php
                 if(isset($_SESSION['userid'])) {
             ?>        
@@ -32,22 +31,24 @@
                 <!-- log out -->
                 <a href="php/logout.php">Log out</a>
 
-                <?php } else { ?>
+            <?php } else { ?>
                     <a href="Views/join.php">Join</a>
                     <a href="Views/login.php">Log in</a>            
-                <?php } ?>
-            </div>
+            <?php } ?>
         </div>
 
         <div class="main_menu">
-            <div class="container">
-                <a href="#">About Us</a>
-                <a href="#">Gallery</a>
-                <a href="Views/community/board_list.php">Community</a>
-            </div>
+            <a href="#">About Us</a>
+            <a href="#">Gallery</a>
+            <a href="Views/community/board_list.php">Community</a>
         </div>
-    </nav>
+
+    </div>
     
+    <div class="letter">
+        흘림 글씨 애니메이션
+    </div>
+
     <!-- 검은색 배경 -->
     <div class="middle">
         middle icon
@@ -55,13 +56,12 @@
 
     <!-- 그림 갤러리 -->
     <div class="gallary">
-        gallary1
-        gallary2
+        gallary
     </div>
 
-    <footer>
-        copyright@...
-    </footer>
+    <div class="footer">
+        copyright@--
+    </div>
 
     <!--  부트스트랩 js 사용 -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
